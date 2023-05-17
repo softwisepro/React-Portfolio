@@ -1,51 +1,60 @@
-import React from 'react';
-import '../output.css'
-import { Link, NavLink } from 'react-router-dom';
-import { AiOutlineArrowRight, AiOutlineDownload } from 'react-icons/ai';
+import React from 'react'
+import Navbar from '../components/Navbar'
+import Layout from '../components/Layout'
+import ProfilePic from '../assets/profile/developer-pic.png'
+import { Link, Route, Routes } from 'react-router-dom'
+import { AiOutlineDownload, AiOutlinePhone } from 'react-icons/ai'
+import Footer from '../components/Footer'
+import About from '../container/About';
 
 const Home = () => {
-  return (
-    <div className='h-full w-full flex justify-start items center flex-col transition-all'>
-      <div className='relative w-full h-full'>
-        <div className='justify-between items-center w-full h-full'>
-          <div className='flex flex-col top-0 bottom-0 left-0 right-0 justify-center items-center text-center p-5'>
-            <div className='py-5 flex space-x-3'>
-              <span className='text-red-400 text-3xl'>I am</span>
-              <h1 className='text-3xl text-blue-300'>Jackson Kweyunga</h1>
+    return (
+        <div className='Main__body w-full min-h-full'>
+            <div className='Top__navigation'>
+                <Navbar />
             </div>
-            <div>
-              <h2 className='text-xl font-bold'>
-                A Profesional web developer from Tanzania
-              </h2>
+
+            <div className='w-full min-h-screen text-black flex items-center'>
+                <Layout className='pt-0 pb-0'>
+                    <div className='flex flex-row justify-between items-center w-full'>
+                        <div className='w-1/2'>
+                            <img src={ProfilePic} alt='Jackson Kweyung' className='w-full h-auto' />
+                        </div>
+                        <div className='w-1/2'>
+                            <h1 className='text-4xl leading-tight text-left p-5 inline-block font-bold'>Transforming Vision into Reality Through Coding  <br /> and Design.</h1>
+                            <p className='text-xl text-left px-5 font-bold text-gray-400'>
+                                As a proficient full-stack developer, my commitment lies in transforming concepts into cutting-edge web applications. Discover my recent projects and articles that demonstrate my expertise in React.js and web development.
+                            </p>
+                            <div className='flex p-10 space-x-5 w-full justify-center items-center'>
+                                <Link
+                                    to='/'
+                                    className='flex text-md font-bold text-white bg-gray-700 py-1 border px-3 hover:scale-105 transition-[scale] duration-75 ease rounded-md justify-center items-center'
+                                >
+                                    Download CV
+                                    <AiOutlineDownload fontSize={30} className='ml-2' />
+                                </Link>
+
+                                <Link
+                                    to='/contact'
+                                    className='flex text-md font-bold text-gray-500  justify-center hover:scale-105 transition-[scale] duration-75 ease items-center'
+                                >
+                                    Contact Me
+                                    <AiOutlinePhone fontSize={30} className='ml-2' />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </Layout>
             </div>
-            <div className='my-5'>
-              <p className='p-5 leading-8 text-center font-bold text-gray-400'>
-                Once you have added this rule and saved your document, go back to your browser and click around on the links in our example. You'll see that the active link whose content is displayed from is highlighted with a blue color. What you will also see is our Home link always highlighted. That isn't correct. The fix for
-              </p>
+            <div className='footer'>
+                <Footer />
             </div>
-            <div className='p-5 mb-10 flex gap-2'>
-              <NavLink
-                to='/about'
-                className='justify-between items-center gap-5 w-full underline font-bold text-gray-300 flex flex-row transition-all'
-              >
-                see more about me
-                <AiOutlineArrowRight fontSize={20} />
-              </NavLink>
-            </div>
-            <div>
-              <NavLink
-                to='/'
-                className='justify-between items-center gap-5 w-full p-5 border shadow-sm rounded-xl font-bold text-gray-600 flex flex-row hover:scale-105 hover:bg-blue-200 transition-all'
-              >
-                Download My CV
-                <AiOutlineDownload fontSize={20} />
-              </NavLink>
-            </div>
-          </div>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/about' element={<About />} />
+            </Routes>
         </div>
-      </div>
-    </div>
-  )
+    )
 }
 
 export default Home

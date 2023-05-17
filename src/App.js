@@ -1,20 +1,17 @@
 import React from 'react';
-import { Landing } from './container/Landing';
-import Contact from './container/Contact';
-import About from './container/About';
-import Home from './container/Home'
-import './output.css'
-import { BrowserRouter, HashRouter, Route, Router, Routes } from 'react-router-dom';
-
-
+import { Routes, Route } from 'react-router';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
+import Home from './container/Home';
+import Login from './components/Login';
 
 const App = () => {
   return (
-    <HashRouter>
-        <Routes>
-          <Route exact path="*" element={<Landing />} />
-        </Routes>
-    </HashRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path='*' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
