@@ -12,7 +12,7 @@ const Footer = () => {
         <div>
             <p 
                 className='uppercase'
-            >All Rights Reseved | copyright &copy; <Link target='_blank' className='text-orange-400' to='http://atomatiki.teck'>atomatiki.teck</Link></p>
+            >All Rights Reseved | copyright &copy; <Link target='_blank' className='text-orange-400' to='http://atomatiki.tech'>atomatiki.tech</Link></p>
         </div>
     </div>
   )

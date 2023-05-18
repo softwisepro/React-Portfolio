@@ -1,10 +1,7 @@
 import React from 'react'
-import { Link, Route, Routes, useResolvedPath } from 'react-router-dom';
+import { Link, useResolvedPath } from 'react-router-dom';
 import Logo from './Logo';
 import { GithubIcon, LinkedInIcon, TwitterIcon } from './icons';
-import { motion } from 'framer-motion';
-import About from '../container/About';
-import Home from '../container/Home';
 
 const CustomLink = ({ to, title, className = '' }) => {
 
